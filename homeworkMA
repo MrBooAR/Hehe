@@ -1,0 +1,38 @@
+\documentclass[a4paper,12pt,oneside,article]{memoir}
+\setlrmarginsandblock{3cm}{*}{1}
+\setulmarginsandblock{3cm}{*}{1}
+\checkandfixthelayout[nearest]
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, bm, mathtools, mathdots}
+
+\usepackage[normalem]{ulem}
+\begin{document}
+\chapter*{Бунис Артём 7 группа 2 курс}
+\chapter*{Решение вычисления интеграла}
+\begin{equation*}
+\oint\limits_C\frac{e^z}{(z-i)^2(z+2)}dz
+\end{equation*}
+в следующих случаях задания контура:
+\begin{enumerate}[1)]
+\item $|z-i|=2$
+\item $|z+2-i|=3$
+\end{enumerate}
+У нашей функции есть 2 особые точки i и -2.
+1) В круг $|z-i|<2$ попадает точка $z_1=i$. Запишем подынтегральную функцию в аналитическом виде {\Large $\frac{\frac{e^z}{z+2}}{(z-i)^2}$} 
+для корня $a=i$ вычисляем интеграл:
+\begin{equation*}
+\oint\limits_C\frac{e^z}{(z-i)^2(z+2)}dz=2\pi i\Big(\frac{e^z}{z+2}\Big)'\bigg|_{z=i}= \frac{2\pi i (1+i)}{(2+i)^2}e^i.
+\end{equation*}
+2) В круг $|z+2-i|<3$ входят обе точки $z_1=i, z_2=-2$. Решаем в соответствии с формулой
+\begin{equation*}
+\oint\limits_Cf(z)dz=\oint\limits_{C_1}f(z)dz+\oint\limits_{C_2} f(z)dz,
+\end{equation*}
+где $C$ разбивается на две области, где каждый из $C_1$ и $C_2$ охватывает только одну из точек. В частности, в качестве контура $C_1$ можно взять окружность из предыдущего пункта, $C_2$ - окружность $|z+2+i|=2$.
+\begin{equation*}
+\oint\limits_C\frac{e^z}{(z-i)^2(z+2)}dz
+=2 \pi i \frac{e^{-2}}{(2+i)^2}+2\pi i \frac{1+i}{(2+i)^2}e^i
+=\frac{2 \pi i}{(2+i)^2}\Big(e^{-2}+e^i(1+i)\Big).
+\end{equation*}
+\end{document}
